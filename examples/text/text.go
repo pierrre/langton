@@ -33,9 +33,9 @@ func main() {
 							break
 						}
 					}
-					buf.WriteString(s)
+					_, _ = buf.WriteString(s)
 				}
-				buf.WriteString("\n")
+				_, _ = buf.WriteString("\n")
 			}
 			fmt.Println(buf)
 		}
