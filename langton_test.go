@@ -207,7 +207,7 @@ func TestGameStep(t *testing.T) {
 		Rules: RulesBasic,
 		Grid:  NewGrid(Pt(50, 50), 2),
 		Ants: []*Ant{
-			&Ant{
+			{
 				Location:    Pt(25, 25),
 				Orientation: OrientationUp,
 			},
