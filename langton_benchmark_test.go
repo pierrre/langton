@@ -1,6 +1,8 @@
 package langton
 
-import "testing"
+import (
+	"testing"
+)
 
 func BenchmarkGridGetInc(b *testing.B) {
 	g := NewGrid(Pt(10, 10), 2)

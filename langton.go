@@ -108,13 +108,14 @@ type Ant struct {
 
 // Move moves the Ant for the current orientation.
 func (a *Ant) Move(v int) {
-	if a.Orientation == OrientationUp {
+	switch a.Orientation {
+	case OrientationUp:
 		a.Location.Y -= v
-	} else if a.Orientation == OrientationRight {
+	case OrientationRight:
 		a.Location.X += v
-	} else if a.Orientation == OrientationDown {
+	case OrientationDown:
 		a.Location.Y += v
-	} else if a.Orientation == OrientationLeft {
+	case OrientationLeft:
 		a.Location.X -= v
 	}
 }

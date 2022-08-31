@@ -1,3 +1,4 @@
+// Package termbox provides a termbox implementation of Langton's ant.
 package main
 
 import (
@@ -34,37 +35,40 @@ func main() {
 	for step := 0; ; step++ {
 		select {
 		case ev := <-evQueue:
-			switch ev.Type {
-			case termbox.EventKey:
+			if ev.Type == termbox.EventKey {
 				return
 			}
 		default:
 		}
 
-		for y := 0; y < height; y++ {
-			for x := 0; x < width; x++ {
-				p := langton.Pt(x, y)
-				var bg termbox.Attribute
-				switch game.Grid.Get(p) {
-				case 0:
-					bg = termbox.ColorBlack
-				default:
-					bg = termbox.ColorWhite
-				}
-				for _, a := range game.Ants {
-					if a.Location == p {
-						bg = termbox.ColorRed
-						continue
-					}
-				}
-				termbox.SetCell(x, y, ' ', termbox.ColorDefault, bg)
-			}
-		}
+		draw(game)
 		err = termbox.Flush()
 		if err != nil {
 			panic(err)
 		}
 
 		game.Step()
+	}
+}
+
+func draw(game *langton.Game) {
+	for y := 0; y < game.Grid.Size.Y; y++ {
+		for x := 0; x < game.Grid.Size.X; x++ {
+			p := langton.Pt(x, y)
+			var bg termbox.Attribute
+			switch game.Grid.Get(p) {
+			case 0:
+				bg = termbox.ColorBlack
+			default:
+				bg = termbox.ColorWhite
+			}
+			for _, a := range game.Ants {
+				if a.Location == p {
+					bg = termbox.ColorRed
+					continue
+				}
+			}
+			termbox.SetCell(x, y, ' ', termbox.ColorDefault, bg)
+		}
 	}
 }

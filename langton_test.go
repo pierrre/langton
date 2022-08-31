@@ -1,6 +1,8 @@
 package langton
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestNewGrid(t *testing.T) {
 	g := NewGrid(Pt(10, 15), 2)
@@ -83,49 +85,59 @@ func TestOrientationString(t *testing.T) {
 
 func TestOrientationRotate(t *testing.T) {
 	o := Orientation(0)
-	if o != OrientationUp {
-		t.Fatal("not equal")
-	}
-	o = o.Rotate(1)
-	if o != OrientationRight {
-		t.Fatal("not equal")
-	}
-	o = o.Rotate(1)
-	if o != OrientationDown {
-		t.Fatal("not equal")
-	}
-	o = o.Rotate(1)
-	if o != OrientationLeft {
-		t.Fatal("not equal")
-	}
-	o = o.Rotate(1)
-	if o != OrientationUp {
-		t.Fatal("not equal")
-	}
-	o = o.Rotate(-1)
-	if o != OrientationLeft {
-		t.Fatal("not equal")
-	}
-	o = o.Rotate(-1)
-	if o != OrientationDown {
-		t.Fatal("not equal")
-	}
-	o = o.Rotate(-1)
-	if o != OrientationRight {
-		t.Fatal("not equal")
-	}
-	o = o.Rotate(-1)
-	if o != OrientationUp {
-		t.Fatal("not equal")
-	}
-	o = o.Rotate(5)
-	if o != OrientationRight {
-		t.Fatal("not equal")
-	}
-	o = o.Rotate(-5)
-	if o != OrientationUp {
-		t.Fatal(o)
-		t.Fatal("not equal")
+	for i, v := range []struct {
+		rotate   int
+		expected Orientation
+	}{
+		{
+			rotate:   0,
+			expected: OrientationUp,
+		},
+		{
+			rotate:   1,
+			expected: OrientationRight,
+		},
+		{
+			rotate:   1,
+			expected: OrientationDown,
+		},
+		{
+			rotate:   1,
+			expected: OrientationLeft,
+		},
+		{
+			rotate:   1,
+			expected: OrientationUp,
+		},
+		{
+			rotate:   -1,
+			expected: OrientationLeft,
+		},
+		{
+			rotate:   -1,
+			expected: OrientationDown,
+		},
+		{
+			rotate:   -1,
+			expected: OrientationRight,
+		},
+		{
+			rotate:   -1,
+			expected: OrientationUp,
+		},
+		{
+			rotate:   5,
+			expected: OrientationRight,
+		},
+		{
+			rotate:   -5,
+			expected: OrientationUp,
+		},
+	} {
+		o = o.Rotate(v.rotate)
+		if o != v.expected {
+			t.Fatalf("unexpected orientation at step %d: got %v, want %v", i, o, v.expected)
+		}
 	}
 }
 
