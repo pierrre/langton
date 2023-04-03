@@ -12,7 +12,7 @@ require (
 	github.com/mattn/go-runewidth v0.0.14 // indirect
 	github.com/pierrre/compare v1.1.3 // indirect
 	github.com/pierrre/errors v0.3.4 // indirect
-	github.com/pierrre/go-libs v0.1.0 // indirect
+	github.com/pierrre/go-libs v0.1.1 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
 	golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2 // indirect
 )
