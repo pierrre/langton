@@ -3,6 +3,7 @@ package main
 
 import (
 	termbox "github.com/nsf/termbox-go"
+	"github.com/pierrre/go-libs/goroutine"
 	"github.com/pierrre/langton"
 )
 
@@ -14,11 +15,12 @@ func main() {
 	defer termbox.Close()
 
 	evQueue := make(chan termbox.Event)
-	go func() {
+	wait := goroutine.GoWait(func() {
 		for {
 			evQueue <- termbox.PollEvent()
 		}
-	}()
+	})
+	defer wait()
 
 	width, height := termbox.Size()
 	game := &langton.Game{
