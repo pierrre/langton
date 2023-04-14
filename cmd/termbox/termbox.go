@@ -15,12 +15,11 @@ func main() {
 	defer termbox.Close()
 
 	evQueue := make(chan termbox.Event)
-	wait := goroutine.GoWait(func() {
+	goroutine.Go(func() {
 		for {
 			evQueue <- termbox.PollEvent()
 		}
 	})
-	defer wait()
 
 	width, height := termbox.Size()
 	game := &langton.Game{
