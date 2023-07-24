@@ -9,7 +9,7 @@ require (
 )
 
 require (
-	github.com/mattn/go-runewidth v0.0.14 // indirect
+	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/pierrre/compare v1.1.4 // indirect
 	github.com/pierrre/errors v0.3.10 // indirect
 	github.com/pierrre/pretty v0.0.6 // indirect
