@@ -1,11 +1,11 @@
 module github.com/pierrre/langton
 
-go 1.20
+go 1.21
 
 require (
 	github.com/nsf/termbox-go v1.1.1
 	github.com/pierrre/assert v0.1.7
-	github.com/pierrre/go-libs v0.2.7
+	github.com/pierrre/go-libs v0.2.8
 )
 
 require (
