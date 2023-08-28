@@ -1,6 +1,6 @@
 module github.com/pierrre/langton
 
-go 1.21
+go 1.21.0
 
 require (
 	github.com/nsf/termbox-go v1.1.1
