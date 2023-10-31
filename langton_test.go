@@ -18,9 +18,9 @@ func TestNewGrid(t *testing.T) {
 	}
 }
 
-func TestGridSquareIndex(t *testing.T) {
+func TestGridIndex(t *testing.T) {
 	g := NewGrid(Pt(10, 15), 2)
-	i := g.SquareIndex(Pt(5, 5))
+	i := g.index(Pt(5, 5))
 	assert.Equal(t, i, 55)
 }
 

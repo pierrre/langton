@@ -5,12 +5,12 @@ import (
 	"fmt"
 )
 
-// Point is a point on a Grid.
+// Point is a point on a [Grid].
 type Point struct {
 	X, Y int
 }
 
-// Pt returns a Point.
+// Pt returns a [Point].
 func Pt(x, y int) Point {
 	return Point{x, y}
 }
@@ -24,7 +24,7 @@ type Grid struct {
 	States  uint8
 }
 
-// NewGrid creates a new Grid.
+// NewGrid creates a new [Grid].
 func NewGrid(size Point, states uint8) *Grid {
 	return &Grid{
 		Size:    size,
@@ -33,24 +33,23 @@ func NewGrid(size Point, states uint8) *Grid {
 	}
 }
 
-// SquareIndex return the internal index of a square.
-func (g *Grid) SquareIndex(p Point) int {
+func (g *Grid) index(p Point) int {
 	return p.Y*g.Size.X + p.X
 }
 
-// Get returns the value of a square.
+// Get returns the value of a [Point].
 func (g *Grid) Get(p Point) uint8 {
-	return g.Squares[g.SquareIndex(p)]
+	return g.Squares[g.index(p)]
 }
 
-// Set sets the value of a square.
+// Set sets the value of a [Point].
 func (g *Grid) Set(p Point, v uint8) {
-	g.Squares[g.SquareIndex(p)] = v
+	g.Squares[g.index(p)] = v
 }
 
-// GetInc increments the value of a square and return the previous value.
+// GetInc increments the value of a [Point] and return the previous value.
 func (g *Grid) GetInc(p Point) uint8 {
-	i := g.SquareIndex(p)
+	i := g.index(p)
 	v := g.Squares[i]
 	w := v + 1
 	if w >= g.States {
@@ -60,7 +59,7 @@ func (g *Grid) GetInc(p Point) uint8 {
 	return v
 }
 
-// Orientation is the orientation of an Ant.
+// Orientation is the orientation of an [Ant].
 type Orientation int
 
 // Orientation values.
@@ -100,7 +99,7 @@ func (o Orientation) Rotate(v int) Orientation {
 	return o
 }
 
-// Ant is an ant on a Grid.
+// Ant is an ant on a [Grid].
 type Ant struct {
 	Location    Point
 	Orientation Orientation
@@ -120,31 +119,31 @@ func (a *Ant) Move(v int) {
 	}
 }
 
-// Turn changes the orientation of the Ant.
+// Turn changes the [Orientation] of the [Ant].
 func (a *Ant) Turn(v int) {
 	a.Orientation = a.Orientation.Rotate(v)
 }
 
-// Rule is a moving instruction for an Ant.
+// Rule is a moving instruction for an [Ant].
 type Rule interface {
 	Apply(a *Ant)
 }
 
-// RuleFunc is a Rule func.
+// RuleFunc is a [Rule] func.
 type RuleFunc func(a *Ant)
 
-// Apply implements Rule.
+// Apply implements [Rule].
 func (f RuleFunc) Apply(a *Ant) {
 	f(a)
 }
 
-// RuleTurnRightMove is a simple Rule.
+// RuleTurnRightMove is a simple [Rule].
 var RuleTurnRightMove = RuleFunc(func(a *Ant) {
 	a.Turn(1)
 	a.Move(1)
 })
 
-// RuleTurnLeftMove is a simple Rule.
+// RuleTurnLeftMove is a simple [Rule].
 var RuleTurnLeftMove = RuleFunc(func(a *Ant) {
 	a.Turn(-1)
 	a.Move(1)
@@ -163,7 +162,7 @@ type Game struct {
 	Ants  []*Ant
 }
 
-// Step runs the Game for 1 step.
+// Step runs the [Game] for 1 step.
 func (g *Game) Step() {
 	for _, a := range g.Ants {
 		v := g.Grid.GetInc(a.Location)
