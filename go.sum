@@ -12,5 +12,5 @@ github.com/pierrre/go-libs v0.2.15/go.mod h1:eA3pQD5LHZmavOpTpUfO8FszduBNHoFXDWr
 github.com/pierrre/pretty v0.0.14 h1:MchNs3JDFS4LtPWVtt5hC/SZikDpFdg+ZqkRp9ZFvy0=
 github.com/pierrre/pretty v0.0.14/go.mod h1:l1eKofTLCVI7lixF2tyA+WewC4lKZB3YviUoe4+S17g=
 github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
-github.com/rivo/uniseg v0.4.6 h1:Sovz9sDSwbOz9tgUy8JpT+KgCkPYJEN/oYzlJiYTNLg=
-github.com/rivo/uniseg v0.4.6/go.mod h1:FN3SvrM+Zdj16jyLfmOkMNblXMcoc8DfTHruCPUcx88=
+github.com/rivo/uniseg v0.4.7 h1:WUdvkW8uEhrYfLC4ZzdpI2ztxP1I582+49Oc5Mq64VQ=
+github.com/rivo/uniseg v0.4.7/go.mod h1:FN3SvrM+Zdj16jyLfmOkMNblXMcoc8DfTHruCPUcx88=
