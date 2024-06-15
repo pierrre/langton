@@ -5,7 +5,7 @@ go 1.22.0
 require (
 	github.com/nsf/termbox-go v1.1.1
 	github.com/pierrre/assert v0.3.4
-	github.com/pierrre/go-libs v0.2.15
+	github.com/pierrre/go-libs v0.3.0
 )
 
 require (

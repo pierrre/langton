@@ -2,12 +2,15 @@
 package main
 
 import (
+	"context"
+
 	termbox "github.com/nsf/termbox-go"
 	"github.com/pierrre/go-libs/goroutine"
 	"github.com/pierrre/langton"
 )
 
 func main() {
+	ctx := context.Background()
 	err := termbox.Init()
 	if err != nil {
 		panic(err)
@@ -15,7 +18,7 @@ func main() {
 	defer termbox.Close()
 
 	evQueue := make(chan termbox.Event)
-	goroutine.Go(func() {
+	goroutine.Go(ctx, func(context.Context) {
 		for {
 			evQueue <- termbox.PollEvent()
 		}
