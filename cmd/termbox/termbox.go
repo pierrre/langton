@@ -18,7 +18,7 @@ func main() {
 	defer termbox.Close()
 
 	evQueue := make(chan termbox.Event)
-	goroutine.Go(ctx, func(context.Context) {
+	goroutine.Start(ctx, func(context.Context) {
 		for {
 			evQueue <- termbox.PollEvent()
 		}
