@@ -172,18 +172,18 @@ func (g *Game) Step() {
 	}
 }
 
-func normalize(v, max int) int {
+func normalize(v, maxValue int) int {
 	if v < 0 {
-		v = v%max + max
+		v = v%maxValue + maxValue
 	}
-	if v >= max {
-		v %= max
+	if v >= maxValue {
+		v %= maxValue
 	}
 	return v
 }
 
-func normalizePoint(v, max Point) Point {
-	v.X = normalize(v.X, max.X)
-	v.Y = normalize(v.Y, max.Y)
+func normalizePoint(v, maxPoint Point) Point {
+	v.X = normalize(v.X, maxPoint.X)
+	v.Y = normalize(v.Y, maxPoint.Y)
 	return v
 }
