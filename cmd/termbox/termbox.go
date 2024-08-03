@@ -56,8 +56,8 @@ func main() {
 }
 
 func draw(game *langton.Game) {
-	for y := 0; y < game.Grid.Size.Y; y++ {
-		for x := 0; x < game.Grid.Size.X; x++ {
+	for y := range game.Grid.Size.Y {
+		for x := range game.Grid.Size.X {
 			p := langton.Pt(x, y)
 			var bg termbox.Attribute
 			switch game.Grid.Get(p) {

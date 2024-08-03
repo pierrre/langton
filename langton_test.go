@@ -11,8 +11,8 @@ func TestNewGrid(t *testing.T) {
 	assert.Equal(t, g.Size, Pt(10, 15))
 	assert.Equal(t, len(g.Squares), 150)
 	assert.Equal(t, g.States, 2)
-	for y := 0; y < g.Size.Y; y++ {
-		for x := 0; x < g.Size.X; x++ {
+	for y := range g.Size.Y {
+		for x := range g.Size.X {
 			assert.Equal(t, g.Get(Pt(x, y)), 0, assert.MessageWrapf("%d,%d", x, y))
 		}
 	}
@@ -176,7 +176,7 @@ func TestGameStep(t *testing.T) {
 			},
 		},
 	}
-	for i := 0; i < 100000; i++ {
+	for range 100000 {
 		g.Step()
 	}
 }

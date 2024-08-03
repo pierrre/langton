@@ -24,8 +24,8 @@ func main() {
 	buf := new(bytes.Buffer)
 	for step := 0; ; step++ {
 		buf.Reset()
-		for y := 0; y < game.Grid.Size.Y; y++ {
-			for x := 0; x < game.Grid.Size.X; x++ {
+		for y := range game.Grid.Size.Y {
+			for x := range game.Grid.Size.X {
 				p := langton.Pt(x, y)
 				s := strconv.Itoa(int(game.Grid.Get(p)))
 				for _, a := range game.Ants {
