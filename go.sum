@@ -9,8 +9,8 @@ github.com/pierrre/compare v1.4.6 h1:JjGjO9r82dT3K/Zzaqgzdwo/rKFv04Jpb97AAU0wW1M
 github.com/pierrre/compare v1.4.6/go.mod h1:uwIp5+8pGOhaHKnzM2rI2A/hiAbTaE0tkiD/G2iHNWM=
 github.com/pierrre/go-libs v0.6.1 h1:WvupPnAViOJvN0gKZaNo4wQJOh5uqJE4J1gl4eqb6KY=
 github.com/pierrre/go-libs v0.6.1/go.mod h1:UhkUwjqxekTsXl8LAAYP6eJTfoV7nJwop/+QPVsOjEM=
-github.com/pierrre/pretty v0.2.4 h1:xVL+ig25LfTlmA0dUJ0zR6cHREypKpfWsAbslTnY/k8=
-github.com/pierrre/pretty v0.2.4/go.mod h1:WdkxECbxQhjK301akWB9ML1vqnRBiIWCpNE5JvJHgpc=
+github.com/pierrre/pretty v0.3.1 h1:BKtwcuzogkYjSQD8+f/C61GSqkxsrgxTa+ksGtoYRSU=
+github.com/pierrre/pretty v0.3.1/go.mod h1:7xF8H9eM9tysvoAf90SpiTysRnLx2+OGNf64jr/1M88=
 github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
 github.com/rivo/uniseg v0.4.7 h1:WUdvkW8uEhrYfLC4ZzdpI2ztxP1I582+49Oc5Mq64VQ=
 github.com/rivo/uniseg v0.4.7/go.mod h1:FN3SvrM+Zdj16jyLfmOkMNblXMcoc8DfTHruCPUcx88=
