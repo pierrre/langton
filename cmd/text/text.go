@@ -27,7 +27,7 @@ func main() {
 		for y := range game.Grid.Size.Y {
 			for x := range game.Grid.Size.X {
 				p := langton.Pt(x, y)
-				s := strconv.Itoa(int(game.Grid.Get(p)))
+				s := strconv.Itoa(int(game.Grid.Get(p))) //nolint:gosec // There is not overflow.
 				for _, a := range game.Ants {
 					if a.Location == p {
 						s = "*"
