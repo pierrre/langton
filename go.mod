@@ -11,6 +11,6 @@ require (
 require (
 	github.com/mattn/go-runewidth v0.0.16 // indirect
 	github.com/pierrre/compare v1.4.13 // indirect
-	github.com/pierrre/pretty v0.10.0 // indirect
+	github.com/pierrre/pretty v0.11.4 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 )
