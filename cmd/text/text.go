@@ -38,7 +38,7 @@ func main() {
 			}
 			_, _ = buf.WriteString("\n")
 		}
-		fmt.Fprintln(os.Stdout, buf)
+		_, _ = fmt.Fprintln(os.Stdout, buf)
 		game.Step()
 	}
 }
