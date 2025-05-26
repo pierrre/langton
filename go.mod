@@ -6,7 +6,7 @@ toolchain go1.24.1
 
 require (
 	github.com/nsf/termbox-go v1.1.1
-	github.com/pierrre/assert v0.8.3
+	github.com/pierrre/assert v0.8.5
 	github.com/pierrre/go-libs v0.12.1
 )
 
