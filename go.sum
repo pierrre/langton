@@ -5,8 +5,8 @@ github.com/mattn/go-runewidth v0.0.21 h1:jJKAZiQH+2mIinzCJIaIG9Be1+0NR+5sz/lYEEj
 github.com/mattn/go-runewidth v0.0.21/go.mod h1:XBkDxAl56ILZc9knddidhrOlY5R/pDhgLpndooCuJAs=
 github.com/nsf/termbox-go v1.1.1 h1:nksUPLCb73Q++DwbYUBEglYBRPZyoXJdrj5L+TkjyZY=
 github.com/nsf/termbox-go v1.1.1/go.mod h1:T0cTdVuOwf7pHQNtfhnEbzHbcNyCEcVU4YPpouCbVxo=
-github.com/pierrre/assert v0.12.0 h1:iapXY6mdAhaIOh0iPjCMK2/CjlFEfgNRgc10YSFt9BA=
-github.com/pierrre/assert v0.12.0/go.mod h1:9AEGGFuJp339PdEUkhfOq8zqYPdSurPWAua35EEpY2o=
+github.com/pierrre/assert v0.12.1 h1:Hg+r10601guGiOvXoWHx1Xp2TLj3w6FMb+PN7pR+iQc=
+github.com/pierrre/assert v0.12.1/go.mod h1:9AEGGFuJp339PdEUkhfOq8zqYPdSurPWAua35EEpY2o=
 github.com/pierrre/compare v1.4.14 h1:snH4S/2nClsCCgYAvseyQYX6RHX8WvCdd23deiL1ovc=
 github.com/pierrre/compare v1.4.14/go.mod h1:5RkfHZojsCAFZR+mW9SHH55mH1tCWNWMP7xhWgxc6QE=
 github.com/pierrre/go-libs v0.26.1 h1:plXQbZ1/Usv7RtS4K+u2jM8uerSD9q/yi+EWx1Q3mnM=
