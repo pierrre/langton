@@ -1,4 +1,4 @@
-// Package langton provides an implementation of the Langton's ant.
+// Package langton provides an implementation of Langton's ant.
 package langton
 
 import (
@@ -47,7 +47,7 @@ func (g *Grid) Set(p Point, v uint8) {
 	g.Squares[g.index(p)] = v
 }
 
-// GetInc increments the value of a [Point] and return the previous value.
+// GetInc increments the value of a [Point] and returns the previous value.
 func (g *Grid) GetInc(p Point) uint8 {
 	i := g.index(p)
 	v := g.Squares[i]
@@ -162,7 +162,7 @@ type Game struct {
 	Ants  []*Ant
 }
 
-// Step runs the [Game] for 1 step.
+// Step runs the [Game] for one step.
 func (g *Game) Step() {
 	for _, a := range g.Ants {
 		v := g.Grid.GetInc(a.Location)
