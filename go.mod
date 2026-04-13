@@ -12,5 +12,5 @@ require (
 	github.com/clipperhouse/uax29/v2 v2.7.0 // indirect
 	github.com/mattn/go-runewidth v0.0.22 // indirect
 	github.com/pierrre/compare v1.4.15 // indirect
-	github.com/pierrre/pretty v0.23.0 // indirect
+	github.com/pierrre/pretty v0.23.1 // indirect
 )
