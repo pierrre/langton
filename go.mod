@@ -5,12 +5,12 @@ go 1.26.0
 require (
 	github.com/nsf/termbox-go v1.1.1
 	github.com/pierrre/assert v0.13.0
-	github.com/pierrre/go-libs v0.29.1
+	github.com/pierrre/go-libs v0.30.1
 )
 
 require (
 	github.com/clipperhouse/uax29/v2 v2.7.0 // indirect
 	github.com/mattn/go-runewidth v0.0.23 // indirect
 	github.com/pierrre/compare v1.4.15 // indirect
-	github.com/pierrre/pretty v0.23.1 // indirect
+	github.com/pierrre/pretty v0.23.3 // indirect
 )
