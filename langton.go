@@ -64,7 +64,7 @@ type Orientation int
 
 // Orientation values.
 //
-// The 0 value is "up", and increase clockwise.
+// The 0 value is "up", and increases clockwise.
 const (
 	OrientationUp Orientation = iota
 	OrientationRight
