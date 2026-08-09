@@ -3,14 +3,19 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"fmt"
 	"os"
+	"os/signal"
 	"strconv"
+	"syscall"
 
 	"github.com/pierrre/langton"
 )
 
 func main() {
+	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	defer stop()
 	game := &langton.Game{
 		Rules: langton.RulesBasic,
 		Grid:  langton.NewGrid(langton.Pt(80, 60), 2),
@@ -23,6 +28,11 @@ func main() {
 	}
 	buf := new(bytes.Buffer)
 	for step := 0; ; step++ {
+		select {
+		case <-ctx.Done():
+			return
+		default:
+		}
 		buf.Reset()
 		for y := range game.Grid.Size.Y {
 			for x := range game.Grid.Size.X {
