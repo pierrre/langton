@@ -10,19 +10,21 @@ import (
 )
 
 func main() {
-	ctx := context.Background()
+	ctx, cancel := context.WithCancel(context.Background())
 	err := termbox.Init()
 	if err != nil {
+		cancel()
 		panic(err)
 	}
-	defer termbox.Close()
 
-	evQueue := make(chan termbox.Event)
-	goroutine.Start(ctx, func(context.Context) {
-		for {
-			evQueue <- termbox.PollEvent()
-		}
-	})
+	evQueue, wait := startEventLoop(ctx, termbox.PollEvent)
+
+	defer func() {
+		cancel()
+		go termbox.Interrupt()
+		wait()
+		termbox.Close()
+	}()
 
 	width, height := termbox.Size()
 	game := &langton.Game{
@@ -53,6 +55,28 @@ func main() {
 
 		game.Step()
 	}
+}
+
+func startEventLoop(ctx context.Context, poll func() termbox.Event) (evQueue <-chan termbox.Event, wait func()) {
+	ch := make(chan termbox.Event, 1)
+	waiter := goroutine.Start(ctx, func(ctx context.Context) {
+		for {
+			select {
+			case <-ctx.Done():
+				return
+			default:
+			}
+			ev := poll()
+			select {
+			case <-ctx.Done():
+				return
+			case ch <- ev:
+			}
+		}
+	})
+	evQueue = ch
+	wait = waiter.Wait
+	return
 }
 
 func draw(game *langton.Game) {
