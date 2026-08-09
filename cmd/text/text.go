@@ -11,16 +11,12 @@ import (
 )
 
 func main() {
-	game := &langton.Game{
-		Rules: langton.RulesBasic,
-		Grid:  langton.NewGrid(langton.Pt(80, 60), 2),
-		Ants: []*langton.Ant{
-			{
-				Location:    langton.Pt(40, 30),
-				Orientation: langton.OrientationUp,
-			},
+	game := langton.NewGame(langton.RulesBasic, langton.NewGrid(langton.Pt(80, 60), 2), []*langton.Ant{
+		{
+			Location:    langton.Pt(40, 30),
+			Orientation: langton.OrientationUp,
 		},
-	}
+	})
 	buf := new(bytes.Buffer)
 	for step := 0; ; step++ {
 		buf.Reset()

@@ -162,6 +162,20 @@ type Game struct {
 	Ants  []*Ant
 }
 
+// NewGame creates a new [Game].
+//
+// It panics if len(rules) is less than grid.States.
+func NewGame(rules []Rule, grid *Grid, ants []*Ant) *Game {
+	if len(rules) < int(grid.States) {
+		panic(fmt.Sprintf("langton: len(Rules) (%d) must be >= Grid.States (%d)", len(rules), grid.States))
+	}
+	return &Game{
+		Rules: rules,
+		Grid:  grid,
+		Ants:  ants,
+	}
+}
+
 // Step runs the [Game] for one step.
 func (g *Game) Step() {
 	for _, a := range g.Ants {

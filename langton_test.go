@@ -166,17 +166,37 @@ func TestRuleTurnLeftMove(t *testing.T) {
 }
 
 func TestGameStep(t *testing.T) {
-	g := &Game{
-		Rules: RulesBasic,
-		Grid:  NewGrid(Pt(50, 50), 2),
-		Ants: []*Ant{
-			{
-				Location:    Pt(25, 25),
-				Orientation: OrientationUp,
-			},
+	g := NewGame(RulesBasic, NewGrid(Pt(50, 50), 2), []*Ant{
+		{
+			Location:    Pt(25, 25),
+			Orientation: OrientationUp,
 		},
-	}
+	})
 	for range 100000 {
+		g.Step()
+	}
+}
+
+func TestNewGamePanicRulesStates(t *testing.T) {
+	assert.Panics(t, func() {
+		NewGame(RulesBasic, NewGrid(Pt(10, 10), 4), nil)
+	})
+}
+
+func TestGameStepMultiStates(t *testing.T) {
+	rules := []Rule{
+		RuleTurnRightMove,
+		RuleTurnLeftMove,
+		RuleTurnRightMove,
+		RuleTurnLeftMove,
+	}
+	g := NewGame(rules, NewGrid(Pt(50, 50), 4), []*Ant{
+		{
+			Location:    Pt(25, 25),
+			Orientation: OrientationUp,
+		},
+	})
+	for range 1000 {
 		g.Step()
 	}
 }
