@@ -25,16 +25,12 @@ func main() {
 	})
 
 	width, height := termbox.Size()
-	game := &langton.Game{
-		Rules: langton.RulesBasic,
-		Grid:  langton.NewGrid(langton.Pt(width, height), 2),
-		Ants: []*langton.Ant{
-			{
-				Location:    langton.Pt(width/2, height/2),
-				Orientation: langton.OrientationUp,
-			},
+	game := langton.NewGame(langton.RulesBasic, langton.NewGrid(langton.Pt(width, height), 2), []*langton.Ant{
+		{
+			Location:    langton.Pt(width/2, height/2),
+			Orientation: langton.OrientationUp,
 		},
-	}
+	})
 
 	for step := 0; ; step++ {
 		select {

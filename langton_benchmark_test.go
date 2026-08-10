@@ -68,14 +68,10 @@ func BenchmarkAntMoveLeft(b *testing.B) {
 }
 
 func BenchmarkGameStep(b *testing.B) {
-	g := &Game{
-		Rules: RulesBasic,
-		Grid:  NewGrid(Pt(20, 20), 2),
-		Ants: []*Ant{{
-			Location:    Pt(10, 10),
-			Orientation: OrientationUp,
-		}},
-	}
+	g := NewGame(RulesBasic, NewGrid(Pt(20, 20), 2), []*Ant{{
+		Location:    Pt(10, 10),
+		Orientation: OrientationUp,
+	}})
 	for b.Loop() {
 		g.Step()
 	}
