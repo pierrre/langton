@@ -3,7 +3,7 @@ module github.com/pierrre/langton
 go 1.27.0
 
 require (
-	github.com/nsf/termbox-go v1.1.1
+	github.com/nsf/termbox-go v1.1.2
 	github.com/pierrre/assert v0.15.7
 	github.com/pierrre/go-libs v0.34.8
 )
@@ -13,4 +13,5 @@ require (
 	github.com/mattn/go-runewidth v0.0.27 // indirect
 	github.com/pierrre/compare v1.5.0 // indirect
 	github.com/pierrre/pretty v0.26.6 // indirect
+	golang.org/x/sys v0.31.0 // indirect
 )
