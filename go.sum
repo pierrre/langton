@@ -1,7 +1,7 @@
 github.com/clipperhouse/uax29/v2 v2.7.0 h1:+gs4oBZ2gPfVrKPthwbMzWZDaAFPGYK72F0NJv2v7Vk=
 github.com/clipperhouse/uax29/v2 v2.7.0/go.mod h1:EFJ2TJMRUaplDxHKj1qAEhCtQPW2tJSwu5BF98AuoVM=
-github.com/mattn/go-runewidth v0.0.27 h1:Feg/Oou5zI/wnpgDF6omIU0OokC9GxLC/WRknhVlIR0=
-github.com/mattn/go-runewidth v0.0.27/go.mod h1:3qAiGCV4Koz/yuveO58qUefmUTRm8r0IGEXZ9jeHp/8=
+github.com/mattn/go-runewidth v0.0.28 h1:rPyg2ybwEKPebvpzVWe1gKBkH8EQFkxO4Y0hjBeLaBU=
+github.com/mattn/go-runewidth v0.0.28/go.mod h1:3qAiGCV4Koz/yuveO58qUefmUTRm8r0IGEXZ9jeHp/8=
 github.com/nsf/termbox-go v1.1.2 h1:7BOmx3jpW/N2YWQF6mF26j54eV7eUmNn5wzuddsJzWg=
 github.com/nsf/termbox-go v1.1.2/go.mod h1:QzxBrv7y4i994ggoegReFLc3XFoDMD3uSlJyMqDgz1I=
 github.com/pierrre/assert v0.15.7 h1:J92wLE3ZgSIqc0s8I0OwlyXW52jDhC6XMIpfY8GKQSE=
