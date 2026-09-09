@@ -13,5 +13,5 @@ require (
 	github.com/mattn/go-runewidth v0.0.29 // indirect
 	github.com/pierrre/compare v1.6.2 // indirect
 	github.com/pierrre/pretty v0.26.8 // indirect
-	golang.org/x/sys v0.47.0 // indirect
+	golang.org/x/sys v0.48.0 // indirect
 )
