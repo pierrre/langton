@@ -12,5 +12,5 @@ github.com/pierrre/go-libs v0.35.1 h1:RTWALKKQLMogh06I++3LVWtll0ugZHKebUYf/BfFIS
 github.com/pierrre/go-libs v0.35.1/go.mod h1:Ew9xuMSV33co0iFFO/MuMHui5tT6HeOCZKSmBvVZFuw=
 github.com/pierrre/pretty v0.26.8 h1:gdiu+QXNJ7rsvxL241me9daFtkJAzMbk8Fc+1KIWhug=
 github.com/pierrre/pretty v0.26.8/go.mod h1:HOPWCPrHoNZsG95/egRGCFYyG54PTUB+i6YfY21zy0U=
-golang.org/x/sys v0.47.0 h1:o7XGOvZQCADBQQ4Y7VNq2dRWQR7JmOUW8Kxx4ZsNgWs=
-golang.org/x/sys v0.47.0/go.mod h1:4GL1E5IUh+htKOUEOaiffhrAeqysfVGipDYzABqnCmw=
+golang.org/x/sys v0.48.0 h1:bbX/i/6MgT9BVLM9RT1thmxL04yeTAhbEz4SyadbXoo=
+golang.org/x/sys v0.48.0/go.mod h1:hNLxWAXmnKAxqDtdwIYC4bM9oQPEecfsnNMuSxOs3og=
